@@ -93,18 +93,49 @@
         public function fetchPosts(){
             try{
                 $this->LastThree = $this->connection->query("SELECT * FROM EVENTS ORDER BY ID")->fetchAll();
-
-                foreach($this->LastThree as $key => $value){
+		$output = '{
+			"type": "FeatureCollection",
+				"features": [';
+		foreach($this->LastThree as $key => $value){
+		/*
                     echo "<div class='card' style='width: 18rem;'>
                         <div class='card-body'>
-                            <h5 class='card-title'>" .$value[10] ."</h5>
+                            <h5 class='card-title'>" .$value[9] ."</h5>
                             <h6 class='card-subtitle mb-2 text-muted'>Card subtitle</h6>
                             <p class='card-text'>" .$value[9] ."</p>
                             <a href='#' class='card-link'" .$value[2] ."</a>
                             <a href='#' class='card-link'>Another link</a>
                         </div>
-                    </div>";
-                }
+			</div>";*/
+			$output .= 
+				'{
+					"type": "Feature",
+					"geometry": {
+						"type": "Point",
+						"coordinates": [
+							"' . $value[11] 
+							. '", "' . $value[10] 
+							. '"]
+							},
+						"properties": {
+						"phoneFormatted":"' . $value[12] .'",
+						"phone":"' . $value[12] . '",
+						"event":"' . $value[9] . '",
+						"address":"' . $value[2] . '",
+						"city":"' . $value[3] . '",
+						"country":"' . $value[5] . '",
+						"postalCode": "' . $value[4] . '"
+						}
+				},';
+
+						
+
+		}
+
+		$output .= 'null]}';
+
+		echo $output;
+
             }catch(PDOException $e){
                 die("SQL query gick ej: " . $e->getMessage());
             }
