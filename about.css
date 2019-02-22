@@ -43,3 +43,9 @@ body {
     left: 800px;
     bottom: 550px;
 }
+
+#aboutselection {
+    position: relative;
+    bottom: 200px;
+    left: 700px;
+}
