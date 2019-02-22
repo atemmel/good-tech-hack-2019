@@ -94,6 +94,7 @@ form.main-form input[type=submit].button {
 	background: #FFF;
 	cursor: pointer;
 	transition: 0.5s color;
+	width: 420px;
 }
 
 ::placeholder {
@@ -107,10 +108,10 @@ form.main-form input[type=submit].button:hover {
 
 .goog-te-combo {
 	font-family: 'Work Sans', sans-serif;
-	font-size: 40px;
+	font-size: 40px !important;
 	border-radius: 400px;
-	padding: 20px 10px;
-	text-align: center;
+	padding: 20px 10px !important;
+	text-align: center !important;
 	display: block;
 	position: relative;
 	border: none;
@@ -119,6 +120,7 @@ form.main-form input[type=submit].button:hover {
 	transform: translate(-50%);
 	background: #c7aac7;
 	color: #FFF;
+	width: 400px !important;
 }
 
 .center {
