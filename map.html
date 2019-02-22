@@ -228,7 +228,6 @@
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 	    stores = JSON.parse(this.responseText);
-	    console.log(stores);
 	    stores.features.pop();
   // This is where your interactions with the symbol layer used to be
   // Now you have interactions with DOM markers instead
@@ -267,110 +266,8 @@
   xhttp.open("GET", "extract.php", true);
   xhttp.send();
 
-  /*var stores = 
-	{
-    "type": "FeatureCollection",
-    "features": [
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            17.287,
-            62.391
-          ]
-        },
-        "properties": {
-          "phoneFormatted": "(060) 12345",
-          "phone": "12345",
-          "event": "Beerpong",
-          "address": "Dalgatan 14",
-          "city": "Sundsvall",
-          "country": "Sweden",
-          "postalCode": "85237",
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-           17.345883,
-           62.380380
-          ]
-        },
-        "properties": {
-          "phoneFormatted": "(060) 56789",
-          "phone": "56789",
-          "event": "Språklektion",
-          "address": "Skönsmogatan 25D",
-          "city": "Sundsvall",
-          "country": "Sweden",
-          "postalCode": "85462",
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            17.316210,
-            62.384094
-          ]
-        },
-        "properties": {
-          "phoneFormatted": "(060) 54321",
-          "phone": "54321",
-          "event": "Datakommunikation",
-          "address": "Fridhemsgatan 5",
-          "city": "Sundsvall",
-          "country": "Sweden",
-          "postalCode": "85238",
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            17.301529,
-            62.389411
-          ]
-        },
-        "properties": {
-          "phoneFormatted": "(060) 98765",
-          "phone": "98765",
-          "event": "Verksamhet",
-          "address": "Köpmangatan 27",
-          "city": "Sundsvall",
-          "country": "Sweden",
-          "postalCode": "85232",
-        }
-      },
-      {
-        "type": "Feature",
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-             17.258961,
-             62.389048
-          ]
-        },
-        "properties": {
-          "phoneFormatted": "(060) 76543",
-          "phone": "76543",
-          "event": "Tipspromenad",
-          "address": "Nackstavägen 16C",
-          "city": "Sundsvall",
-          "country": "Sweden",
-          "postalCode": "85352",
-        }
-      }]
-    };*/
 
-	console.log(stores);
 
-	//console.log(stores == secstores);
   // This adds the data to the map
   map.on('load', function (e) {
     // This is where your '.addLayer()' used to be, instead add only the source without styling a layer
