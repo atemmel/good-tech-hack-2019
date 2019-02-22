@@ -2,7 +2,8 @@ body {
 	margin: 0px;
 	font-family: 'Work Sans', sans-serif;
 	background-color: black;
-	color: white;
+    color: white;
+    height: 700px;
 }
 
 #aboutbackground {
@@ -35,4 +36,10 @@ body {
     position: relative;
     bottom: 400px;
     left: 350px;
+}
+
+#aboutagenda {
+    position: relative;
+    left: 800px;
+    bottom: 550px;
 }
