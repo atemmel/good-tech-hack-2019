@@ -6,10 +6,23 @@
 	<link type="text/css" rel="stylesheet" href="main.css" />
 </head>
 <body>
+<<<<<<< HEAD
 	<div id="navigation">
 		<a href="#">About</a>
 		<a href="#">Map</a>
 		<a href="#">Home</a>
 	</div>
+=======
+	<div id='map'></div>
+	<script>
+		mapboxgl.accessToken = 'pk.eyJ1IjoicXdhcnRlbiIsImEiOiJjanNnMDRpZmQwN3hhNGFsNWdnaGxod3c0In0.pglaNYuFOjp8cXeS4jv40w';
+		var map = new mapboxgl.Map({
+			container: 'map', // container id
+			style: 'mapbox://styles/mapbox/streets-v9', // stylesheet location
+			center: [17.284, 62.393], // starting position [lng, lat]
+			zoom: 14 // starting zoom
+		});
+	</script>
+>>>>>>> 92b367c2395842335f4dd8f65dbfaaa5965c8996
 </body>
 </html>
