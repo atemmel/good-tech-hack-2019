@@ -1,7 +1,6 @@
 body {
 	margin: 0px;
 	font-family: 'Work Sans', sans-serif;
-	/*background-image: url("imgs/photo-1519999482648-25049ddd37b1.jpg";*/
 }
 
 #navigation {
@@ -47,4 +46,44 @@ img#logo {
 select#langselect {
 	position: relative;
 	bottom: 400px;
+}
+
+form.main-form {
+	display: inline-block;
+}
+
+form.main-form .button {
+	font-family: 'Work Sans', sans-serif;
+	font-size: 30px;
+	border-radius: 400px;
+	width: 400px;
+	padding: 10px 10px;
+	text-align: center;
+	display: block;
+	position: relative;
+	top: 96px;
+	margin-bottom: 20px;
+	border: none;
+}
+
+form.main-form input[type=text].button {
+	background: #c7aac7;
+	color: #FFF;
+}
+
+form.main-form input[type=submit].button {
+	color: #c7aac7;
+	background: #FFF;
+	cursor: pointer;
+	transition: 0.5s color;
+}
+
+form.main-form input[type=submit].button:hover {
+	color: #444;
+	text-decoration: underline;
+}
+
+.center {
+	text-align: center;
+	width: 100%;
 }
