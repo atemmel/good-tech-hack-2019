@@ -7,8 +7,12 @@ body {
 }
 
 #navigation {
-	background: #c7aac7;
+	background: black;
+	/*background: #c7aac7;*/
 	overflow: hidden;
+	position: relative;
+	top: 580px;
+	right: 600px;
 }
 
 #navigation a {
@@ -25,10 +29,14 @@ body {
 	background: #7a697a;
 }
 
+
+
 #banner {
 	width: 100%;
 	background: url("imgs/photo-1519999482648-25049ddd37b1.jpg");
-	height: 400px;
+	height: 500px;
+	position: relative;
+	bottom: 50px;
 }
 
 #content {
@@ -41,12 +49,25 @@ body {
 	text-align: center;
 }
 
-img#logo {
+div#google_translate_element {
 	position: relative;
-	left: 500px;
+	bottom: 475px;
+	right: 230px;
 }
 
-select#langselect {
+img#logo {
+	width: 250px;
+	height: 70px;
 	position: relative;
-	bottom: 400px;
+	left: 640px;
+	/*position: relative;
+	bottom: 44px;
+	left: 650px;*/
+}
+
+div#border {
+	background: #E6D9F0;
+	height: 70px;
+	position: relative;
+	bottom: 44px;
 }
