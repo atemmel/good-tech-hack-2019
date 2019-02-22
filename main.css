@@ -43,3 +43,8 @@ img#logo {
 	position: relative;
 	left: 500px;
 }
+
+select#langselect {
+	position: relative;
+	bottom: 200px;
+}
