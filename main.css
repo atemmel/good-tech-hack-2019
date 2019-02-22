@@ -1,5 +1,6 @@
 body {
 	margin: 0px;
+	font-family: 'Work Sans', sans-serif;
 }
 
 #navigation {
@@ -14,10 +15,25 @@ body {
 	text-align: center;
 	padding: 5px 20px;
 	text-decoration: none;
-	font-family: 'Work Sans', sans-serif;
 	font-size: 26px;
 }
 
 #navigation a:hover {
 	background: #7a697a;
+}
+
+#banner {
+	width: 100%;
+	background: #0F0;
+	height: 400px;
+}
+
+#content {
+	left: 20%;
+	width: 60%;
+	position: relative;
+}
+
+#content h1 {
+	text-align: center;
 }
