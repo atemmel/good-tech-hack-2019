@@ -1,4 +1,17 @@
 body {
 	margin: 0px;
-	background: #000;
+}
+
+#navigation {
+	background: #2ec13f;
+	overflow: hidden;
+}
+
+#navigation a {
+	color: #FFF;
+	display: block;
+	float: right;
+	text-align: center;
+	padding: 5px 20px;
+	text-decoration: none;
 }
