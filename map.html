@@ -230,6 +230,7 @@
         "properties": {
           "phoneFormatted": "(060) 12345",
           "phone": "12345",
+          "event": "Beerpong",
           "address": "Dalgatan 14",
           "city": "Sundsvall",
           "country": "Sweden",
@@ -248,6 +249,7 @@
         "properties": {
           "phoneFormatted": "(060) 56789",
           "phone": "56789",
+          "event": "Språklektion",
           "address": "Skönsmogatan 25D",
           "city": "Sundsvall",
           "country": "Sweden",
@@ -266,6 +268,7 @@
         "properties": {
           "phoneFormatted": "(060) 54321",
           "phone": "54321",
+          "event": "Datakommunikation",
           "address": "Fridhemsgatan 5",
           "city": "Sundsvall",
           "country": "Sweden",
@@ -284,6 +287,7 @@
         "properties": {
           "phoneFormatted": "(060) 98765",
           "phone": "98765",
+          "event": "Verksamhet",
           "address": "Köpmangatan 27",
           "city": "Sundsvall",
           "country": "Sweden",
@@ -302,6 +306,7 @@
         "properties": {
           "phoneFormatted": "(060) 76543",
           "phone": "76543",
+          "event": "Tipspromenad",
           "address": "Nackstavägen 16C",
           "city": "Sundsvall",
           "country": "Sweden",
@@ -369,7 +374,7 @@
 
     var popup = new mapboxgl.Popup({closeOnClick: false})
           .setLngLat(currentFeature.geometry.coordinates)
-          .setHTML('<h3>Evenemang</h3>' +
+          .setHTML('<h3>' + currentFeature.properties.event + '</h3>' +
             '<h4>' + currentFeature.properties.address + '</h4>')
           .addTo(map);
   }
@@ -389,12 +394,12 @@
       link.href = '#';
       link.className = 'title';
       link.dataPosition = i;
-      link.innerHTML = prop.address;
+      link.innerHTML = prop.event;
 
       var details = listing.appendChild(document.createElement('div'));
       details.innerHTML = prop.city;
       if (prop.phone) {
-        details.innerHTML += ' &middot; ' + prop.phoneFormatted;
+        details.innerHTML += ' &middot; ' + prop.address;
       }
 
 
