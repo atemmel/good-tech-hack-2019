@@ -1,5 +1,6 @@
 body {
 	margin: 0px;
+	background-image: "imgs/photo-1519999482648-25049ddd37b1.png";
 }
 
 #navigation {
@@ -24,5 +25,5 @@ body {
 
 img#logo {
 	position: relative;
-	left: 100px;
+	left: 500px;
 }
