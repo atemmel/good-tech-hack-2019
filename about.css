@@ -1,0 +1,38 @@
+body {
+	margin: 0px;
+	font-family: 'Work Sans', sans-serif;
+	background-color: black;
+	color: white;
+}
+
+#aboutbackground {
+    width: 100%;
+    background: url("imgs/photo-1535448996690-4277028bb0e5.jpg");
+    background-repeat: no-repeat;
+    height: 700px;
+}
+
+.shaded {
+    background: rgba(0,0,0, 0.8);
+    position: absolute;
+    height: 700px;
+    width: 100%;
+}
+
+#abouttitle {
+    position: relative;
+    bottom: 550px;
+    left: 650px;
+}
+
+#abouttext {
+    position: relative;
+    bottom: 400px;
+    left: 350px;
+}
+
+#aboutvision {
+    position: relative;
+    bottom: 400px;
+    left: 350px;
+}

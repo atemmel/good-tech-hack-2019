@@ -1,11 +1,17 @@
 body {
 	margin: 0px;
 	font-family: 'Work Sans', sans-serif;
+	background-color: black;
+	color: white;
 }
 
 #navigation {
-	background: #c7aac7;
+	background: black;
+	/*background: #c7aac7;*/
 	overflow: hidden;
+	position: relative;
+	top: 580px;
+	right: 600px;
 }
 
 #navigation a {
@@ -22,10 +28,14 @@ body {
 	background: #7a697a;
 }
 
+
+
 #banner {
 	width: 100%;
 	background: url("imgs/photo-1519999482648-25049ddd37b1.jpg");
-	height: 400px;
+	height: 500px;
+	position: relative;
+	bottom: 50px;
 }
 
 #content {
@@ -38,14 +48,21 @@ body {
 	text-align: center;
 }
 
-img#logo {
+div#google_translate_element {
 	position: relative;
-	left: 500px;
+	/*bottom: 475px;
+	right: 230px;*/
+	text-align: center;
 }
 
-select#langselect {
+img#logo {
+	width: 250px;
+	height: 70px;
 	position: relative;
-	bottom: 400px;
+	left: 640px;
+	/*position: relative;
+	bottom: 44px;
+	left: 650px;*/
 }
 
 form.main-form {
@@ -54,14 +71,14 @@ form.main-form {
 
 form.main-form .button {
 	font-family: 'Work Sans', sans-serif;
-	font-size: 30px;
+	font-size: 40px;
 	border-radius: 400px;
 	width: 400px;
-	padding: 10px 10px;
+	padding: 20px 10px;
 	text-align: center;
 	display: block;
 	position: relative;
-	top: 96px;
+	top: 46px;
 	margin-bottom: 20px;
 	border: none;
 }
@@ -86,4 +103,10 @@ form.main-form input[type=submit].button:hover {
 .center {
 	text-align: center;
 	width: 100%;
+}
+div#border {
+	background: #E6D9F0;
+	height: 70px;
+	position: relative;
+	bottom: 44px;
 }
