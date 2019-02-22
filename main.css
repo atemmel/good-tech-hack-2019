@@ -1,7 +1,7 @@
 body {
 	margin: 0px;
 	font-family: 'Work Sans', sans-serif;
-	background-image: "imgs/photo-1519999482648-25049ddd37b1.png";
+	/*background-image: url("imgs/photo-1519999482648-25049ddd37b1.jpg";*/
 }
 
 #navigation {
@@ -25,7 +25,7 @@ body {
 
 #banner {
 	width: 100%;
-	background: #0F0;
+	background: url("imgs/photo-1519999482648-25049ddd37b1.jpg");
 	height: 400px;
 }
 
