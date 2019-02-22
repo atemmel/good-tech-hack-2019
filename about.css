@@ -6,6 +6,17 @@ body {
     height: 700px;
 }
 
+#abouttext {
+    text-align: center;
+    position: relative;
+    bottom: 300px;
+}
+
+#abouttext2 {
+    position: relative;
+    bottom: 100px;
+}
+
 #aboutbackground {
     width: 100%;
     background: url("imgs/photo-1535448996690-4277028bb0e5.jpg");
@@ -20,32 +31,22 @@ body {
     width: 100%;
 }
 
-#abouttitle {
-    position: relative;
-    bottom: 550px;
-    left: 650px;
-}
-
-#abouttext {
-    position: relative;
-    bottom: 400px;
-    left: 350px;
-}
-
-#aboutvision {
-    position: relative;
-    bottom: 400px;
-    left: 350px;
-}
-
-#aboutagenda {
-    position: relative;
-    left: 800px;
-    bottom: 550px;
-}
-
 #aboutselection {
     position: relative;
     bottom: 200px;
-    left: 700px;
+    right: 680px;
+}
+
+#aboutselection a {
+    color: #FFF;
+	display: block;
+	float: right;
+	text-align: center;
+	padding: 5px 20px;
+	text-decoration: none;
+    font-size: 26px;
+}
+
+#aboutselection a:hover {
+    background-color: grey;
 }
