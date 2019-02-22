@@ -7,6 +7,8 @@
       <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
       <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+      <style type="text/css">iframe.goog-te-banner-frame{ display: none !important;}</style>
+      <style type="text/css">body {position: static !important; top:0px !important;}</style>
 
       <style>
 
@@ -74,6 +76,7 @@
           height:100%;
           overflow:auto;
           padding-bottom:60px;
+          background-color: #EAEAEA;
         }
 
         .listings .item {
@@ -81,6 +84,7 @@
           border-bottom:1px solid #eee;
           padding:10px;
           text-decoration:none;
+          background-color: #EAEAEA;
         }
 
         .listings .item:last-child { border-bottom:none; }
@@ -91,7 +95,7 @@
         }
 
         .listings .item .title small { font-weight:400; }
-        .listings .item .title:hover { color: #EAEAEA; }
+        .listings .item .title:hover { color: #FAFAFA; }
         .listings .item.active {
           background-color:#8DC9F7;
         }
@@ -184,7 +188,8 @@
   <body>
     <div class='sidebar'>
       <div class='heading'>
-        <h1>Events</h1>
+        <h1>Evenemang <a href="index.html"> <img src="home.png" align="right">  </a>
+        </h1>
       </div>
     <div id='listings' class='listings'></div>
     </div>
@@ -427,6 +432,13 @@
   }
 
 
+    </script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'sv'}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
     </script>
   </body>
 </html>
