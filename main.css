@@ -11,12 +11,14 @@ body {
 	overflow: hidden;
 	position: relative;
 	top: 580px;
-	right: 600px;
+	transform: translate(-42%);
+	
 }
 
 #navigation a {
 	color: #FFF;
 	display: block;
+	float: right;
 	text-align: center;
 	padding: 5px 20px;
 	text-decoration: none;
@@ -132,3 +134,4 @@ div#border {
 	position: relative;
 	bottom: 44px;
 }
+
