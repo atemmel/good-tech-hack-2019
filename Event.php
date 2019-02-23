@@ -124,7 +124,9 @@
 						"address":"' . $value[2] . '",
 						"city":"' . $value[3] . '",
 						"country":"' . $value[5] . '",
-						"postalCode": "' . $value[4] . '"
+						"postalCode": "' . $value[4] . '",
+						"description": "' . $value[8] . '",
+						"host": "' . $value[1] . '"
 						}
 				},';
 

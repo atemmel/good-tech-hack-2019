@@ -6,6 +6,7 @@
       <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
       <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet'>
       <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+      <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
       <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
       <style type="text/css">iframe.goog-te-banner-frame{ display: none !important;}</style>
       <style type="text/css">body {position: static !important; top:0px !important;}</style> 
@@ -47,7 +48,6 @@
     scrollZoom: true
   });
 
-  alert(window.location.search.substr(1) );
 
   var xhttp;
   var stores = null;
@@ -56,6 +56,52 @@
     if (this.readyState == 4 && this.status == 200) {
 	    stores = JSON.parse(this.responseText);
 	    stores.features.pop();
+
+    var requestedLanguage = findGetParameter("language");
+	    if(requestedLanguage) requestedLanguage = requestedLanguage.toUpperCase();
+    var requestedLocation = findGetParameter("location");
+	    if(requestedLocation) requestedLocation = requestedLocation.toUpperCase();
+
+    for (i = 0; i < stores.features.length; i++) {
+      var currentFeature = stores.features[i];
+      var countryArr = currentFeature.properties.country.toUpperCase().split(', ');
+      var location  = currentFeature.properties.city.toUpperCase();
+
+	    if(requestedLanguage != null)
+	    {
+	      if(countryArr.indexOf(requestedLanguage) == -1)
+		    {
+			stores.features.splice(i, 1);
+			--i;
+			continue;
+		    }
+	    }
+
+	    if(requestedLocation != null)
+	    {
+	      if(requestedLocation != location)
+		    {
+			stores.features.splice(i, 1);
+			--i;
+			continue;
+		    }
+	    }
+    }
+	if(stores.features.length > 0)
+	{
+		map = new mapboxgl.Map({
+		    // container id specified in the HTML
+		    container: 'map',
+		    // style URL
+		    style: 'mapbox://styles/mapbox/streets-v9',
+		    // initial position in [long, lat] format
+		    center: stores.features[0].geometry.coordinates,
+		    // initial zoom
+		    zoom: 11,
+		    scrollZoom: true
+		});
+	}
+
   // This is where your interactions with the symbol layer used to be
   // Now you have interactions with DOM markers instead
   stores.features.forEach(function(marker, i) {
@@ -154,14 +200,29 @@
     var popUps = document.getElementsByClassName('mapboxgl-popup');
     if (popUps[0]) popUps[0].remove();
 
-
     var popup = new mapboxgl.Popup({closeOnClick: false})
           .setLngLat(currentFeature.geometry.coordinates)
-          .setHTML('<h3>' + currentFeature.properties.event + '</h3>' +
-            '<h4>' + currentFeature.properties.address + '</h4>')
+          .setHTML('<h3>' + currentFeature.properties.event + '</h3>' + "<h4>Med: " + currentFeature.properties.host + '</h4>'
+		  //'<h4>' + currentFeature.properties.address + '<br>' + 
+		  + 'Telefon: ' + currentFeature.properties.phone + '<br>'
+		  + currentFeature.properties.country + '<br>'
+		  + currentFeature.properties.description + '<br><br>') 
           .addTo(map);
   }
 
+function findGetParameter(parameterName) {
+    var result = null,
+        tmp = [];
+    location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          tmp = item.split("=");
+          if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+        });
+    if(result == "") return null;
+    return result;
+}
 
   function buildLocationList(data) {
     for (i = 0; i < data.features.length; i++) {
@@ -176,8 +237,7 @@
       var link = listing.appendChild(document.createElement('a'));
       link.href = '#';
       link.className = 'title';
-      link.dataPosition = i;
-      link.innerHTML = prop.event;
+      link.dataPosition = i; link.innerHTML = prop.event;
 
       var details = listing.appendChild(document.createElement('div'));
       details.innerHTML = prop.city;
