@@ -202,10 +202,10 @@
 
     var popup = new mapboxgl.Popup({closeOnClick: false})
           .setLngLat(currentFeature.geometry.coordinates)
-          .setHTML('<h3>' + currentFeature.properties.event + '</h3>' + "<h4>Med: " + currentFeature.properties.host + '</h4>'
+          .setHTML('<h3>' + currentFeature.properties.event + '</h3>' + "<h4>Värd: " + currentFeature.properties.host + '</h4>'
 		  //'<h4>' + currentFeature.properties.address + '<br>' + 
 		  + 'Telefon: ' + currentFeature.properties.phone + '<br>'
-		  + currentFeature.properties.country + '<br>'
+		  + 'Språk: ' + currentFeature.properties.country + '<br>'
 		  + currentFeature.properties.description + '<br><br>') 
           .addTo(map);
   }
